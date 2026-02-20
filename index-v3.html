@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -151,6 +152,39 @@
             overflow: hidden;
         }
 
+        .cta-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-proof-icon {
+            color: #f97316;
+            font-size: 18px;
+        }
+
+        .cta-box {
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 14px;
+            background: #111827;
+            /* dark luxury */
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cta-alert {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .harga {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f97316;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -196,6 +230,31 @@
             border: 1px solid rgba(249, 115, 22, 0.2);
         }
 
+        .benefits-grid {
+            display: grid;
+            gap: 28px;
+        }
+
+        .benefit-card {
+            padding: 28px;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .benefit-icon {
+            color: #b68d40;
+            /* gold premium */
+            font-size: 18px;
+        }
+
         .hero-content {
             max-width: 900px;
         }
@@ -222,6 +281,31 @@
             width: 100%;
             max-width: 1000px;
             margin-top: 20px;
+        }
+
+        .solution-grid {
+            display: grid;
+            gap: 28px;
+        }
+
+        .solution-card {
+            padding: 28px;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .solution-card .icon {
+            font-size: 24px;
+            color: #f97316;
+            /* gold premium */
+            margin-bottom: 14px;
+            display: inline-block;
         }
 
         .video-placeholder {
@@ -406,6 +490,25 @@
             border-radius: 50%;
         }
 
+        .proof-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .proof-check {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .proof-icon {
+            font-size: 18px;
+            color: #f97316;
+            /* warna gold premium */
+        }
+
         .proof-quote {
             text-align: center;
             margin-bottom: 60px;
@@ -513,6 +616,25 @@
             font-weight: 600;
             font-size: 13px;
             color: #334155;
+        }
+
+        .realita-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .realita-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .realita-icon {
+            font-size: 18px;
+            color: #b91c1c;
+            /* merah elegan, bukan merah terang */
         }
 
         /* PROBLEM - Zigzag Layout */
@@ -1866,10 +1988,25 @@
             <div class="proof-points">
                 <p class="proof-intro">Masuda Rukost Premium telah membuktikan daya tariknya:</p>
                 <div class="proof-list">
-                    <div class="proof-check"><span class="check-icon">🏡</span><span>80+ Unit SOLD OUT</span></div>
-                    <div class="proof-check"><span class="check-icon">🏗</span><span>3 Tahap Terbangun</span></div>
-                    <div class="proof-check"><span class="check-icon">👥</span><span>80+ Investor</span></div>
-                    <div class="proof-check"><span class="check-icon">🚀</span><span>Tahap 4 On Progress</span></div>
+                    <div class="proof-check">
+                        <i class="fa-solid fa-building proof-icon"></i>
+                        <span>80+ Unit SOLD OUT</span>
+                    </div>
+
+                    <div class="proof-check">
+                        <i class="fa-solid fa-helmet-safety proof-icon"></i>
+                        <span>3 Tahap Terbangun</span>
+                    </div>
+
+                    <div class="proof-check">
+                        <i class="fa-solid fa-handshake proof-icon"></i>
+                        <span>80+ Investor</span>
+                    </div>
+
+                    <div class="proof-check">
+                        <i class="fa-solid fa-chart-line proof-icon"></i>
+                        <span>Tahap 4 On Progress</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1942,11 +2079,27 @@
                 <h3>🧠 Realita yang Jarang Dibicarakan</h3>
                 <p>Properti bisa jadi aset produktif… tapi juga bisa berubah menjadi:</p>
                 <div class="realita-grid">
-                    <div class="realita-item"><span class="realita-icon">💸</span><span>Beban cicilan</span></div>
-                    <div class="realita-item"><span class="realita-icon">😰</span><span>Sumber stres</span></div>
-                    <div class="realita-item"><span class="realita-icon">⏰</span><span>Penyita waktu</span></div>
-                    <div class="realita-item"><span class="realita-icon">📉</span><span>Aset yang tidak
-                            berkembang</span></div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-money-bill-wave realita-icon"></i>
+                        <span>Beban cicilan</span>
+                    </div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-triangle-exclamation realita-icon"></i>
+                        <span>Sumber stres</span>
+                    </div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-clock realita-icon"></i>
+                        <span>Penyita waktu</span>
+                    </div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-arrow-trend-down realita-icon"></i> <span>Aset yang tidak
+                            berkembang</span>
+                    </div>
+
                 </div>
             </div>
             <p class="solution-intro">Ini Terjadi jika Anda Salah Memilih Investasi Properti</p>
@@ -1959,31 +2112,37 @@
             <h2 style="text-align: center;"><span class="text-orange">Karena itu Masuda Rukost Premium Hadir…</span>
             </h2>
             <div class="solution-grid">
+
                 <div class="solution-card">
-                    <span class="icon">🏠</span>
+                    <i class="fa-solid fa-building icon"></i>
                     <h4>Sudah dikonsep untuk demand nyata</h4>
                     <p>Dirancang berdasarkan kebutuhan pasar nyata, bukan sekadar konsep.</p>
                 </div>
+
                 <div class="solution-card">
-                    <span class="icon">📍</span>
+                    <i class="fa-solid fa-location-dot icon"></i>
                     <h4>Dirancang untuk okupansi tinggi</h4>
                     <p>Lokasi strategis dengan permintaan penyewa yang terjamin.</p>
                 </div>
+
                 <div class="solution-card">
-                    <span class="icon">📜</span>
+                    <i class="fa-solid fa-file-contract icon"></i>
                     <h4>Legalitas aman (SHM jelas)</h4>
                     <p>Sertifikat Hak Milik yang jelas dan aman secara hukum.</p>
                 </div>
+
                 <div class="solution-card">
-                    <span class="icon">⚙️</span>
+                    <i class="fa-solid fa-user-tie icon"></i>
                     <h4>Dikelola profesional</h4>
                     <p>Tim manajemen profesional mengelola semua operasional.</p>
                 </div>
+
                 <div class="solution-card">
-                    <span class="icon">💰</span>
+                    <i class="fa-solid fa-chart-line icon"></i>
                     <h4>Fokus cashflow & pertumbuhan aset</h4>
                     <p>Dirancang untuk menghasilkan income, bukan sekadar modal.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -2103,38 +2262,47 @@
         <div class="container">
             <h2>Apa yang Anda Dapatkan<br><span class="text-orange">Sebagai Investor Masuda?</span></h2>
             <div class="benefits-grid">
+
                 <div class="benefit-card">
-                    <h4>💵 Passive Income Bulanan</h4>
+                    <h4><i class="fa-solid fa-coins benefit-icon"></i> Passive Income Bulanan</h4>
                     <p>Properti tidak diam. Aset Anda menghasilkan cashflow rutin setiap bulan.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>📉 Risiko Kekosongan Lebih Rendah</h4>
+                    <h4><i class="fa-solid fa-chart-line benefit-icon"></i> Risiko Kekosongan Lebih Rendah</h4>
                     <p>Didukung demand mahasiswa IPB yang stabil setiap tahun akademik.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>🔒 Investasi Lebih Tenang & Aman</h4>
+                    <h4><i class="fa-solid fa-shield-halved benefit-icon"></i> Investasi Lebih Tenang & Aman</h4>
                     <p>Legalitas SHM jelas memberikan rasa aman jangka panjang.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>⏰ Minim Repot Operasional</h4>
+                    <h4><i class="fa-solid fa-user-tie benefit-icon"></i> Minim Repot Operasional</h4>
                     <p>Semua dikelola profesional — Anda bukan operator kost.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>⚡ Efisiensi Waktu & Energi</h4>
+                    <h4><i class="fa-solid fa-clock benefit-icon"></i> Efisiensi Waktu & Energi</h4>
                     <p>Tanpa drama penyewa, maintenance, dan urusan harian.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>📈 Aset Produktif Jangka Panjang</h4>
+                    <h4><i class="fa-solid fa-arrow-trend-up benefit-icon"></i> Aset Produktif Jangka Panjang</h4>
                     <p>Bukan properti tidur, tapi properti yang terus bekerja menghasilkan.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>🏗 Potensi Pertumbuhan Nilai Properti</h4>
+                    <h4><i class="fa-solid fa-city benefit-icon"></i> Potensi Pertumbuhan Nilai Properti</h4>
                     <p>Berada di kawasan berkembang dengan demand kuat.</p>
                 </div>
+
                 <div class="benefit-card">
-                    <h4>🏛 Bisa Menjadi Legacy Asset</h4>
+                    <h4><i class="fa-solid fa-landmark benefit-icon"></i> Bisa Menjadi Legacy Asset</h4>
                     <p>Aset riil yang bisa diwariskan, bukan sekadar angka di rekening.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -2202,18 +2370,38 @@
             <h2>Kesempatan Tidak Datang Dua Kali.</h2>
             <p class="intro">Masuda Rukost Premium telah membuktikan daya tariknya:</p>
             <div class="cta-proof-grid">
-                <div class="cta-proof-item"><span class="cta-proof-icon">🏡</span><span class="cta-proof-text">80+ Unit
-                        SOLD OUT</span></div>
-                <div class="cta-proof-item"><span class="cta-proof-icon">🏗</span><span class="cta-proof-text">3 Tahap
-                        Terbangun</span></div>
-                <div class="cta-proof-item"><span class="cta-proof-icon">👥</span><span class="cta-proof-text">80+
-                        Investor</span></div>
-                <div class="cta-proof-item"><span class="cta-proof-icon">🚀</span><span class="cta-proof-text">Tahap 4
-                        On Progress</span></div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-building cta-proof-icon"></i>
+                    <span class="cta-proof-text">80+ Unit SOLD OUT</span>
+                </div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-helmet-safety cta-proof-icon"></i>
+                    <span class="cta-proof-text">3 Tahap Terbangun</span>
+                </div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-handshake cta-proof-icon"></i>
+                    <span class="cta-proof-text">80+ Investor</span>
+                </div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-chart-line cta-proof-icon"></i>
+                    <span class="cta-proof-text">Tahap 4 On Progress</span>
+                </div>
+
             </div>
             <div class="cta-box">
-                <p>🚨 Kini Tersedia 12 Unit Terakhir</p>
-                <p class="harga">💰 Mulai 1, 53 Miliar</p>
+                <p class="cta-alert">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Kini Tersedia 12 Unit Terakhir
+                </p>
+
+                <p class="harga">
+                    <i class="fa-solid fa-coins"></i>
+                    Mulai 1,53 Miliar
+                </p>
             </div>
             <div class="cta-requirements">
                 <p>Jika Anda Mencari Properti yang:</p>
