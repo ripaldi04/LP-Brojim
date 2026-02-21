@@ -4,1725 +4,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masuda Rukost Premium - Investasi Properti Dekat IPB</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Home - Masuda Rukost Premium</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+        
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        :root {
+            --primary-orange: #f97316;
+            --dark-orange: #ea580c;
+            --light-orange: #fb923c;
+            --bg-cream: #FDF8F3;
+            --bg-slate: #0F172A;
+            --bg-dark: #1E293B;
+            --gradient-orange: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #f97316 100%);
         }
 
         body {
-            background: #f5f5f5;
-            color: #333;
+            background: var(--bg-cream);
+            color: #1E293B;
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
+        /* Container Utama */
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
+            width: 92%;
+            max-width: 1350px;
+            margin: 0 auto;
         }
 
+        /* Section Styles */
         section {
-            padding: 80px 0;
+            padding: 120px 0;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
             font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #0F172A;
+            margin-bottom: 18px;
+            line-height: 1.15;
+        }
+
+        .section-title p {
+            font-size: 1.15rem;
+            color: #64748B;
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         .text-orange {
-            color: #f97316;
+            color: var(--primary-orange);
         }
 
-        .btn {
-            display: inline-block;
-            background: #f97316;
-            color: white;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
+        /* Cards Grid Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            padding: 10px 0;
         }
 
-        .btn:hover {
-            background: #ea580c;
-            transform: scale(1.05);
+        /* Card Styles */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(249, 115, 22, 0.08);
         }
 
-        .btn-large {
-            padding: 22px 60px;
-            font-size: 20px;
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
         }
 
-        /* NAVBAR */
-        .navbar {
-            position: fixed;
-            top: 0;
+        /* Card Image */
+        .card-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 80px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
         }
 
-        .navbar .container {
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.08);
+        }
+
+        /* Card Content */
+        .card-content {
+            padding: 28px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
-        .navbar-logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #333;
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #0F172A;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #64748B;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--gradient-orange);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 14px;
+            font-weight: 700;
             text-decoration: none;
-        }
-
-        .navbar-logo span {
-            color: #f97316;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, #f5f5f5 100%);
-            padding-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero .subtitle {
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .hero .tagline {
-            font-size: 20px;
-            margin-bottom: 40px;
-            color: #666;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-placeholder {
-            background: #e0e0e0;
-            height: 400px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            border: none;
             cursor: pointer;
-            transition: 0.3s;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .video-placeholder:hover {
-            background: #d5d5d5;
-        }
-
-        /* SOCIAL PROOF */
-        .social-proof {
-            background: #fff;
-            padding: 60px 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .proof-item {
-            text-align: center;
-            padding: 25px;
-            background: #f5f5f5;
-            border-radius: 15px;
-        }
-
-        .proof-item h3 {
-            font-size: 48px;
-            color: #f97316;
-            margin-bottom: 5px;
-        }
-
-        .proof-item .proof-label {
-            font-size: 16px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .proof-item .proof-desc {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-
-        .proof-item .proof-highlight {
-            font-size: 14px;
-            color: #f97316;
-            font-weight: 600;
-        }
-
-        /* PROBLEM */
-        .problem {
-            background: #fff;
-        }
-
-        .problem h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .problem-card {
-            background: #fafafa;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid #f97316;
-        }
-
-        .problem-card p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .realita-box {
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 40px;
-            text-align: center;
-            border: 2px solid #f97316;
-        }
-
-        .realita-box h3 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .realita-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .realita-list p {
-            display: block;
-            padding: 15px;
-            background: #f5f5f5;
-            border-radius: 10px;
-            color: #333;
-            font-size: 16px;
-        }
-
-        .realita-list .highlight {
-            background: #f97316;
-            color: white;
-            font-weight: 600;
-        }
-
-        .realita-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .realita-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #f5f5f5;
-            padding: 15px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .realita-icon {
-            font-size: 24px;
-        }
-
-        .solution-intro {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin: 45px 0 25px;
-            color: #333;
-        }
-
-        /* SOLUTION */
-        .solution h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .solution-card {
-            background: #fff;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .solution-card .icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .solution-card h4 {
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .solution-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* FEATURES */
-        .features {
-            background: #fff;
-        }
-
-        .features h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 36px;
-        }
-
-        .lead {
-            text-align: center;
-            font-size: 22px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .lead-sub {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* PREMIUM INTRO SECTION */
-        .premium-intro {
-            background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-            padding: 100px 0;
-        }
-
-        .premium-card {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 30px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-            border: 1px solid #eee;
-        }
-
-        .premium-card h2 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .premium-card h3 {
-            font-size: 28px;
-            color: #f97316;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .premium-card>p {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .premium-desc {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.8;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 25px;
-            background: #fafafa;
-            border-radius: 15px;
-        }
-
-        .feature-item .check {
-            color: #f97316;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .feature-item h4 {
-            margin-bottom: 8px;
-        }
-
-        .feature-item p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* BENEFITS */
-        .benefits {
-            background: #fff;
-            padding: 100px 0;
-        }
-
-        .benefits h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .benefit-card {
-            background: #fafafa;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .benefit-card:hover {
-            background: #f5f5f5;
-            transform: translateY(-8px);
-        }
-
-        .benefit-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .benefit-card h4 {
-            color: #f97316;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .benefit-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        /* QUOTE & PROOF */
-        .proof-summary {
-            background: #fff;
-            padding: 80px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .proof-quote {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .proof-quote h2 {
-            font-size: 28px;
-            line-height: 1.5;
-            color: #333;
-        }
-
-        .proof-points {
-            text-align: center;
-        }
-
-        .proof-intro {
-            font-size: 20px;
-            margin-bottom: 25px;
-            color: #555;
-        }
-
-        .proof-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .proof-check {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #f5f5f5;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .proof-check .check-icon {
-            font-size: 20px;
-        }
-
-        /* QUOTE */
-        .quote-section {
-            background: #fff;
-            color: #333;
-            text-align: center;
-            padding: 80px 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .quote-section h2 {
-            font-size: 28px;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.5;
-            font-weight: 600;
-        }
-
-        .quote-author {
-            margin-top: 30px;
-            font-size: 18px;
-            color: #f97316;
-        }
-
-        /* TESTIMONIAL */
-        .testimonial {
-            background: #fff;
-        }
-
-        .testimonial h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-
-        .testimonial-slider {
-            background: #f5f5f5;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .testimonial-slider h3 {
-            color: #f97316;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-slider p {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* CTA */
-        .cta-section {
-            background: #fff;
-            color: #333;
-            text-align: center;
-            padding: 80px 0;
-            border-top: 1px solid #eee;
-        }
-
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .cta-section .harga {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: #f97316;
-        }
-
-        .cta-section .btn {
-            background: #f97316;
-            color: white;
-        }
-
-        .cta-section .btn:hover {
-            background: #f5f5f5;
-            transform: scale(1.05);
-        }
-
-        .cta-section .sisa {
-            margin-top: 25px;
-            font-size: 18px;
-        }
-
-        /* CTA - Redesigned Elements */
-        .cta-section .intro {
-            font-size: 20px;
-            margin-bottom: 40px;
-            color: #555;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 40px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-            color: white;
-            padding: 25px 15px;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
-        }
-
-        .stat-icon {
-            font-size: 32px;
-        }
-
-        .stat-number {
-            font-size: 28px;
-            font-weight: 800;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            opacity: 0.95;
-        }
-
-        /* Urgency Box */
-        .urgency-box {
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-            color: white;
-            padding: 30px 40px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                box-shadow: 0 10px 40px rgba(249, 115, 22, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 10px 50px rgba(249, 115, 22, 0.6);
-            }
-        }
-
-        .urgency-icon {
-            font-size: 48px;
-        }
-
-        .urgency-content {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .urgency-title {
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .urgency-content .harga {
-            font-size: 22px;
-            color: #fff;
-            margin: 0;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            margin-bottom: 30px;
-        }
-
-        .benefits-title {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            background: #f8f9fa;
-            padding: 15px 10px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333;
-            border: 2px solid #eee;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            border-color: #f97316;
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .benefit-check {
-            font-size: 18px;
-        }
-
-        /* Conclusion */
-        .conclusion {
-            font-size: 26px;
-            font-weight: 700;
-            color: #f97316;
-            margin-top: 30px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery-2col {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .urgency-box {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px 20px;
-            }
-
-            .cta-section h2 {
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-            }
-
-            .stat-card {
-                padding: 20px 10px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-2col {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* FOUNDER */
-        .founder {
-            background: #fff;
-        }
-
-        .founder h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
-        }
-
-        .founder-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-
-        .founder-image {
-            background: #e0e0e0;
-            height: 400px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-        }
-
-        .founder-info h3 {
-            color: #f97316;
-            margin-bottom: 10px;
-        }
-
-        .founder-info h4 {
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .founder-info p {
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* PROJECT GALLERY */
-        .testimonial-gallery {
-            margin-top: 50px;
-        }
-
-        .testimonial-gallery h3 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .gallery-2col {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .gallery-2col-item {
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.25);
+            align-self: flex-start;
             position: relative;
-            border-radius: 15px;
             overflow: hidden;
         }
 
-        .gallery-2col-item img {
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: 0.3s;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
         }
 
-        .gallery-2col-item:hover img {
-            transform: scale(1.05);
+        .btn:hover::before {
+            left: 100%;
         }
 
-        .gallery-2col-item p {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 13px;
-            color: #666;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.35);
         }
 
-        /* Mobile Gallery Fix */
-        @media (max-width: 480px) {
-            .testimonial-gallery {
-                margin-top: 40px;
-            }
-
-            .testimonial-gallery h3 {
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .gallery-2col {
-                gap: 15px;
-            }
-
-            .gallery-2col-item img {
-                height: 150px;
-            }
-
-            .gallery-2col-item p {
-                font-size: 12px;
-                margin-top: 8px;
-            }
+        /* Icon Arrow */
+        .btn-arrow {
+            transition: transform 0.3s ease;
         }
 
-        /* FAQ */
-        .faq {
-            background: #fff;
+        .btn:hover .btn-arrow {
+            transform: translateX(4px);
         }
 
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 25px;
-        }
-
-        .faq-item {
-            background: #f5f5f5;
-            padding: 25px;
-            border-radius: 15px;
-        }
-
-        .faq-item h4 {
-            color: #f97316;
-            margin-bottom: 12px;
-        }
-
-        .faq-item p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        footer h3 {
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            color: #aaa;
-        }
-
-        /* SCROLLBAR */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #f97316;
-            border-radius: 4px;
-        }
-
-        /* FLOATING WA BUTTON */
-        .wa-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: 0.3s;
-            text-decoration: none;
-        }
-
-        .wa-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        .wa-float svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
-
-        @media(max-width:768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero .subtitle {
-                font-size: 18px;
-            }
-
-            .hero .tagline {
-                font-size: 16px;
-            }
-
-            .stats-grid {
+        /* Responsive: Tablet */
+        @media (max-width: 1100px) {
+            .cards-container {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .faq-grid {
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Responsive: Mobile */
+        @media (max-width: 640px) {
+            .cards-container {
                 grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            .card-image {
+                height: 190px;
+            }
+
+            .card-content {
+                padding: 22px;
+            }
+
+            .card-title {
+                font-size: 1.15rem;
+            }
+
+            .card-description {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            section {
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- FLOATING WA BUTTON -->
-    <a href="https://wa.me/6280000000000" class="wa-float" target="_blank" title="Chat via WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path fill="white"
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-    </a>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
+    <!-- Home Section -->
+    <section class="home-section">
         <div class="container">
-            <a href="#" class="navbar-logo">Masuda<span> Rukost</span></a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>
-                Passive Income dari Kost Premium<br>
-                Dekat IPB — <span class="text-orange">Tanpa Perlu Repot Ngelola</span>
-            </h1>
-            <p class="subtitle">Masuda Rukost Premium menghadirkan properti produktif di lokasi strategis dekat IPB,
-                dengan okupansi tinggi, legalitas SHM aman, dan sistem manajemen profesional.</p>
-
-            <div class="video-placeholder">
-                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800" alt="Video Masuda"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            <div class="section-title">
+                <h2>Properti <span class="text-orange">Pilihan</span></h2>
+                <p>Temukan hunian Impian Anda di lokasi strategis dekat IPB University dengan fasilitas lengkap dan
+                    harga terjangkau.</p>
             </div>
 
-            <a href="#cta" class="btn btn-large">Amankan Unit Terbaik Anda Sekarang!</a>
-        </div>
-    </section>
+            <!-- Cards Grid -->
+            <div class="cards-container">
 
-    <!-- SOCIAL PROOF -->
-    <section class="social-proof">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px; font-size: 28px;">Masuda Rukost Premium bukan cuma janji
-                saja!</h2>
-            <div class="proof-grid">
-                <div class="proof-item">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400"
-                        alt="Properti Sold Out"
-                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>80+</h3>
-                    <p class="proof-label">UNIT SOLD OUT</p>
-                    <p class="proof-desc">Properti produktif ini telah diserap pasar lebih cepat dari rata-rata proyek
-                        rukost pada umumnya.</p>
-                </div>
-                <div class="proof-item">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400"
-                        alt="Tahap Pembangunan"
-                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>3</h3>
-                    <p class="proof-label">TAHAP SUDAH TERBANGUN</p>
-                    <p class="proof-desc">Masuda telah melalui beberapa fase pembangunan dengan progres nyata.</p>
-                    <p class="proof-highlight">Tahap 4 sedang berjalan ⏳ Sisa 12 Unit Terakhir</p>
-                </div>
-                <div class="proof-item">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400" alt="Akad Investor"
-                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>80+</h3>
-                    <p class="proof-label">INVESTOR BERGABUNG</p>
-                    <p class="proof-desc">Dipilih oleh investor yang mengutamakan legalitas aman, market jelas, dan
-                        income stabil.</p>
-                </div>
-                <div class="proof-item">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400" alt="Viral TikTok"
-                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>2JT</h3>
-                    <p class="proof-label">VIRAL VIEWERS</p>
-                    <p class="proof-desc">Satu konten Masuda tembus 2JT viewers di TikTok.</p>
-                    <p class="proof-highlight">Bukti tingginya perhatian & daya tarik pasar terhadap konsep Masuda.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop"
+                            alt="Cluster Modern">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cluster Modern Elite</h3>
+                        <p class="card-description">Rumah tipe modern dengan desain minimalis yang elegan, terletak di
+                            kawasan premium dekat IPB dengan akses mudah ke pusat kota.</p>
+                        <a href="/masuda/rifqi/" class="btn">
+                            Selengkapnya
+                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
 
-    <!-- QUOTE & PROOF -->
-    <section class="proof-summary">
-        <div class="container">
-            <div class="proof-quote">
-                <h2>"Investor cerdas tidak menunggu properti viral.<br>Mereka masuk sebelum SOLD OUT."</h2>
-            </div>
-            <div class="proof-points">
-                <p class="proof-intro">Masuda Rukost Premium telah membuktikan:</p>
-                <div class="proof-list">
-                    <div class="proof-check">
-                        <span class="check-icon">✅</span>
-                        <span>Daya serap pasar tinggi</span>
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
+                            alt="Rumah Minimalis">
                     </div>
-                    <div class="proof-check">
-                        <span class="check-icon">✅</span>
-                        <span>Kepercayaan investor kuat</span>
+                    <div class="card-content">
+                        <h3 class="card-title">Rumah Minimalis Kost</h3>
+                        <p class="card-description">Konsep hemat ruang dengan tata letak efisien, cocok untuk mahasiswa
+                            dan profesional yang menginginkan kenyamanan.</p>
+                        <a href="/masuda/rifqi/" class="btn">
+                            Selengkapnya
+                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
-                    <div class="proof-check">
-                        <span class="check-icon">✅</span>
-                        <span>Progres pembangunan nyata</span>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop"
+                            alt="Town House">
                     </div>
-                    <div class="proof-check">
-                        <span class="check-icon">✅</span>
-                        <span>Demand market jelas</span>
+                    <div class="card-content">
+                        <h3 class="card-title">Town House Premium</h3>
+                        <p class="card-description">Perumahan eksklusif dengan fasilitas lengkap termasuk kolam renang,
+                            gym, dan taman bermain untuk keluarga.</p>
+                        <a href="/masuda/rifqi/" class="btn">
+                            Selengkapnya
+                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
-                </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop"
+                            alt="Apartemen student">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Apartemen Student</h3>
+                        <p class="card-description">Apartemen khusus mahasiswa dengan fasilitas akademik, located
+                            strategis hanya 5 menit dari kampus IPB.</p>
+                        <a href="/masuda/rifqi/" class="btn">
+                            Selengkapnya
+                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
-
-    <!-- GALLERY -->
-    <section style="background: #fff; padding: 80px 0;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px; font-size: 28px;">📸 Galeri</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="background: #f5f5f5; padding: 15px; border-radius: 15px;">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400" alt="Foto Akad Investor"
-                        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;">
-                    <p style="text-align: center; margin-top: 10px; font-weight: 600;">Foto Akad Investor</p>
-                </div>
-                <div style="background: #f5f5f5; padding: 15px; border-radius: 15px;">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400"
-                        alt="Foto Unit Tahap 1-3"
-                        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;">
-                    <p style="text-align: center; margin-top: 10px; font-weight: 600;">Foto Unit Tahap 1-3</p>
-                </div>
-                <div style="background: #f5f5f5; padding: 15px; border-radius: 15px;">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400"
-                        alt="Foto Bangunan & Kamar"
-                        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;">
-                    <p style="text-align: center; margin-top: 10px; font-weight: 600;">Foto Bangunan & Kamar</p>
-                </div>
-                <div style="background: #f5f5f5; padding: 15px; border-radius: 15px;">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400"
-                        alt="Screenshot Viewers TikTok"
-                        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;">
-                    <p style="text-align: center; margin-top: 10px; font-weight: 600;">Screenshot Viewers TikTok</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="problem">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">Investasi Properti Tidak Selalu<br><span
-                    class="text-orange">Seindah yang Dibayangkan.</span></h2>
-            <p
-                style="text-align: center; font-size: 20px; color: #555; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Banyak investor masuk ke properti dengan harapan cuan… namun yang terjadi justru sebaliknya.</p>
-
-            <h3 style="text-align: center; margin-bottom: 30px; color: #f97316;">⚠️ Masalah yang Sering Terjadi di Dunia
-                Rukost</h3>
-
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <p>❌ Properti mahal tapi kosong</p>
-                </div>
-                <div class="problem-card">
-                    <p>❌ Kost sepi karena salah lokasi</p>
-                </div>
-                <div class="problem-card">
-                    <p>❌ Income tidak stabil</p>
-                </div>
-                <div class="problem-card">
-                    <p>❌ Harus repot cari & urus penyewa</p>
-                </div>
-                <div class="problem-card">
-                    <p>❌ Operasional menyita waktu & energi</p>
-                </div>
-                <div class="problem-card">
-                    <p>❌ Legalitas bikin was-was</p>
-                </div>
-                <div class="problem-card">
-                    <p>❌ Bangunan lama jadi beban, bukan aset</p>
-                </div>
-            </div>
-
-            <div class="realita-box">
-                <h3>🧠 Realita yang Jarang Dibicarakan</h3>
-                <p style="font-size: 18px; color: #555; margin-bottom: 25px;">Properti bisa jadi aset produktif… tapi
-                    juga bisa berubah menjadi:</p>
-                <div class="realita-grid">
-                    <div class="realita-item">
-                        <span class="realita-icon">💸</span>
-                        <span>Beban cicilan</span>
-                    </div>
-                    <div class="realita-item">
-                        <span class="realita-icon">😰</span>
-                        <span>Sumber stres</span>
-                    </div>
-                    <div class="realita-item">
-                        <span class="realita-icon">⏰</span>
-                        <span>Penyita waktu</span>
-                    </div>
-                    <div class="realita-item">
-                        <span class="realita-icon">📉</span>
-                        <span>Aset yang tidak berkembang</span>
-                    </div>
-                </div>
-            </div>
-
-            <p class="solution-intro">Ini Terjadi jika Anda Salah Memilih Investasi Properti</p>
-        </div>
-    </section>
-
-    <!-- SOLUTION -->
-    <section class="solution">
-        <div class="container">
-            <h2 style="text-align: center;"><span class="text-orange">Karena itu Masuda Rukost Premium Hadir…</span>
-            </h2>
-
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="icon">🏠</div>
-                    <h4>Sudah dikonsep untuk demand nyata</h4>
-                    <p>Dirancang berdasarkan kebutuhan pasar nyata, bukan sekadar konsep.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="icon">📍</div>
-                    <h4>Dirancang untuk okupansi tinggi</h4>
-                    <p>Lokasi strategis dengan permintaan penyewa yang terjamin.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="icon">📜</div>
-                    <h4>Legalitas aman (SHM jelas)</h4>
-                    <p>Sertifikat Hak Milik yang jelas dan aman secara hukum.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="icon">⚙️</div>
-                    <h4>Dikelola profesional</h4>
-                    <p>Tim manajemen profesional mengelola semua operasional.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="icon">💰</div>
-                    <h4>Fokus cashflow & pertumbuhan aset</h4>
-                    <p>Dirancang untuk menghasilkan income, bukan sekadar menanamkan modal.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREMIUM INTRO -->
-    <section class="premium-intro">
-        <div class="container">
-            <h2 style="font-size: 48px; text-align: center; margin-bottom: 20px;">Masuda Rukost Premium</h2>
-            <p style="font-size: 28px; text-align: center; color: #f97316; font-weight: 700; margin-bottom: 30px;">Bukan
-                Sekadar Properti</p>
-            <p
-                style="font-size: 20px; text-align: center; color: #555; max-width: 700px; margin: 0 auto 15px; line-height: 1.6;">
-                Ini Aset Produktif yang Sudah Dikondisikan Menghasilkan Income Tiap Bulannya.</p>
-            <p
-                style="font-size: 16px; text-align: center; color: #666; max-width: 650px; margin: 0 auto; line-height: 1.7;">
-                Masuda Rukost Premium dirancang untuk investor yang tidak hanya ingin memiliki properti tapi ingin
-                memiliki properti yang bekerja menghasilkan cashflow terus bertumbuh.</p>
-        </div>
-    </section>
-
-    <!-- WHAT YOU GET SECTION -->
-    <section class="features">
-        <div class="container">
-            <h2>Apa yang Anda Miliki di <span class="text-orange">Masuda?</span></h2>
-            <p class="lead-sub" style="margin-bottom: 40px;">Anda tidak hanya membeli bangunan. Tapi Anda akan memiliki:
-            </p>
-
-            <div class="features-grid">
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Legalitas SHM Aman</h4>
-                        <p>Kepemilikan jelas, legal kuat, investasi lebih tenang.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Lokasi Strategis Dekat IPB</h4>
-                        <p>Hanya ±4 menit ke kampus — market mahasiswa stabil.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Konsep Rukost Premium</h4>
-                        <p>Desain modern, nyaman, dan bernilai tinggi di mata penyewa.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Fully Furnished</h4>
-                        <p>Unit siap huni & siap sewa tanpa biaya setup tambahan.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Okupansi Terbukti Tinggi</h4>
-                        <p>Didukung demand mahasiswa IPB yang konsisten setiap tahun.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Manajemen Profesional</h4>
-                        <p>Operasional, tenant, & maintenance dikelola sistematis.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Properti Passive Income</h4>
-                        <p>Dirancang untuk cashflow, bukan sekadar capital gain.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INVESTMENT APPEAL -->
-    <section class="features" style="background: #fafafa;">
-        <div class="container">
-            <h2>Kenapa Ini Menarik Secara <span class="text-orange">Investasi?</span></h2>
-            <p class="lead-sub" style="margin-bottom: 40px;">Karena Masuda menjawab 3 kebutuhan utama investor:</p>
-
-            <div class="features-grid">
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Keamanan Aset</h4>
-                        <p>Legal & market yang terjamin untuk investasi jangka panjang.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Produktivitas Properti</h4>
-                        <p>Cashflow konsisten yang membuat properti bekerja untuk Anda.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✅</span>
-                    <div>
-                        <h4>Efisiensi Waktu</h4>
-                        <p>Tanpa repot kelola — profesional yang mengelola semuanya.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section class="benefits">
-        <div class="container">
-            <h2>Apa yang Anda Dapatkan<br><span class="text-orange">Sebagai Investor Masuda?</span></h2>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h4>💵 Passive Income Bulanan</h4>
-                    <p>Properti tidak diam. Aset Anda menghasilkan cashflow rutin setiap bulan.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>📉 Risiko Kekosongan Lebih Rendah</h4>
-                    <p>Didukung demand mahasiswa IPB yang stabil setiap tahun akademik.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🔒 Investasi Lebih Tenang & Aman</h4>
-                    <p>Legalitas SHM jelas memberikan rasa aman jangka panjang.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>⏰ Minim Repot Operasional</h4>
-                    <p>Semua dikelola profesional — Anda bukan operator kost.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>⚡ Efisiensi Waktu & Energi</h4>
-                    <p>Tanpa drama penyewa, maintenance, dan urusan harian.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>📈 Aset Produktif Jangka Panjang</h4>
-                    <p>Bukan properti tidur, tapi properti yang terus bekerja menghasilkan.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🏗 Potensi Pertumbuhan Nilai Properti</h4>
-                    <p>Berada di kawasan berkembang dengan demand kuat.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🏛 Bisa Menjadi Legacy Asset</h4>
-                    <p>Aset riil yang bisa diwariskan ke generasi berikutnya.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUOTE 2 -->
-    <section class="quote-section">
-        <div class="container">
-            <h2>"Bayangkan punya properti yang tetap menghasilkan,<br>bahkan saat Anda tidur, liburan, atau fokus ke
-                bisnis utama."</h2>
-        </div>
-    </section>
-
-    <!-- TESTIMONIAL -->
-    <section class="testimonial">
-        <div class="container">
-            <h2>Dipercaya Investor.<br><span class="text-orange">Bukan Sekadar Janji Marketing.</span></h2>
-
-            <div class="testimonial-slider">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800" alt="Akad Investor"
-                    style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
-                <p>Masuda Rukost Premium telah dipilih oleh puluhan investor yang mengutamakan keamanan aset &
-                    produktivitas investasi.</p>
-            </div>
-
-            <!-- INVESTOR PHOTO GALLERY -->
-            <div style="margin-top: 40px;">
-                <h3 style="text-align: center; margin-bottom: 35px; font-size: 28px; color: #333;">📸 Momen Investasi
-                    Nyata</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
-                    <div style="text-align: center;">
-                        <div style="overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400"
-                                alt="Momen Tanda Tangan"
-                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
-                        </div>
-                        <p
-                            style="text-align: center; margin-top: 12px; font-size: 15px; font-weight: 600; color: #555;">
-                            ✍️ Momen Tanda Tangan</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400"
-                                alt="Investor Pegang Dokumen"
-                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
-                        </div>
-                        <p
-                            style="text-align: center; margin-top: 12px; font-size: 15px; font-weight: 600; color: #555;">
-                            📄 Investor Pegang Dokumen</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400"
-                                alt="Foto Serah Terima"
-                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
-                        </div>
-                        <p
-                            style="text-align: center; margin-top: 12px; font-size: 15px; font-weight: 600; color: #555;">
-                            🤝 Foto Serah Terima</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="overflow: hidden; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400"
-                                alt="Foto Bersama Tim"
-                                style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
-                        </div>
-                        <p
-                            style="text-align: center; margin-top: 12px; font-size: 15px; font-weight: 600; color: #555;">
-                            👥 Foto Bersama Tim</p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                style="text-align: center; margin-top: 45px; padding: 30px; background: linear-gradient(135deg, #fff 0%, #fafafa 100%); border-radius: 20px; border-left: 4px solid #f97316;">
-                “Investor lain sudah mengamankan unitnya.”
-                </p>
-                <p style="margin-top: 10px; color: #666;">Masuda bukan konsep baru. Ini proyek yang sudah berjalan &
-                    diserap pasar.</p>
-                <p style="font-size: 20px; font-weight: 600;">“Investor cerdas tidak menunggu sampai unit habis…”</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section" id="cta">
-        <div class="container">
-            <h2>"Kesempatan Tidak Datang Dua Kali."</h2>
-            <p class="intro">Masuda Rukost Premium telah membuktikan daya tariknya:</p>
-
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-icon">🏡</span>
-                    <span class="stat-number">80+</span>
-                    <span class="stat-label">Unit SOLD OUT</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">🏗️</span>
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Tahap Terbangun</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">👥</span>
-                    <span class="stat-number">80+</span>
-                    <span class="stat-label">Investor Bergabung</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">🚀</span>
-                    <span class="stat-number">Tahap 4</span>
-                    <span class="stat-label">On Progress</span>
-                </div>
-            </div>
-
-            <!-- Urgency Box -->
-            <div class="urgency-box">
-                <span class="urgency-icon">🚨</span>
-                <div class="urgency-content">
-                    <span class="urgency-title">Nilai Tersisa 12 Unit Terakhir</span>
-                    <span class="harga">Harga mulai dari: <strong>💰 1,53 Miliar</strong></span>
-                </div>
-            </div>
-
-            <!-- Benefits -->
-            <div class="benefits-section">
-                <p class="benefits-title">Jika Anda Mencari Properti yang:</p>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <span class="benefit-check">✅</span>
-                        <span>Legalitas aman</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✅</span>
-                        <span>Market jelas</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✅</span>
-                        <span>Cashflow stabil</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✅</span>
-                        <span>Minim repot operasional</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✅</span>
-                        <span>Aset jangka panjang</span>
-                    </div>
-                </div>
-            </div>
-
-            <p class="conclusion">Masuda adalah jawabannya.</p>
-
-        </div>
-    </section>
-
-    <!-- URGENCY CTA -->
-    <section
-        style="background: #fff; padding: 60px 0; text-align: center; border-top: 3px solid #f97316; border-bottom: 3px solid #f97316;">
-        <div class="container">
-            <h2 style="color: #333; font-size: 28px; margin-bottom: 20px;">⏳ Jangan Tunggu Sampai:</h2>
-            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-                <span style="color: #333; font-size: 18px;">❌ Unit habis</span>
-                <span style="color: #333; font-size: 18px;">❌ Harga naik</span>
-                <span style="color: #333; font-size: 18px;">❌ Investor lain mengambil unit terbaik</span>
-            </div>
-            <h3 style="color: #f97316; font-size: 32px; margin-bottom: 25px;">🔥 AMBIL KEPUTUSAN ANDA SEKARANG</h3>
-            <a href="#contact" class="btn btn-large" style="padding: 16px 35px; font-size: 16px;">
-                👉 "Amankan Unit Rukost Premium!"
-            </a>
-            <p style="color: #666; margin-top: 20px; font-size: 16px;">Sisa 12 Unit • Harga Mulai 1,53 M</p>
-        </div>
-    </section>
-    <!-- FOOTER -->
-    <section class="founder">
-        <div class="container">
-            <h2>Founder Notes</h2>
-
-            <div class="founder-content">
-                <div class="founder-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600" alt="Pak Masudi"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-                </div>
-                <div class="founder-info">
-                    <h3>Masuda</h3>
-                    <h4>Founder Masuda Rukost Premium</h4>
-                    <p>Dengan pengalaman di berbagai proyek properti dan pemahaman mendalam tentang kebutuhan investor,
-                        Masuda hadir dengan solusi investasi properti yang berbeda — bukan sekadar membeli aset, tapi
-                        memiliki sistem yang bekerja menghasilkan.</p>
-                    <p style="margin-top: 15px;">Setiap keputusan dirancang untuk keamanan investor, produktivitas
-                        properti, dan pertumbuhan jangka panjang.</p>
-                </div>
-            </div>
-
-            <!-- PROJECT PHOTO GALLERY -->
-            <div class="testimonial-gallery" style="margin-top: 50px;">
-                <h3>📸 Proyek Masuda Rukost Premium</h3>
-                <div class="gallery-2col">
-                    <div class="gallery-2col-item">
-                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400"
-                            alt="Tampilan Bangunan"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
-                        <p style="text-align: center; margin-top: 10px; font-size: 13px; color: #666;">Tampilan Bangunan
-                        </p>
-                    </div>
-                    <div class="gallery-2col-item">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400"
-                            alt="Interior Kamar"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
-                        <p style="text-align: center; margin-top: 10px; font-size: 13px; color: #666;">Interior Kamar
-                        </p>
-                    </div>
-                    <div class="gallery-2col-item">
-                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=400" alt="Area Komunal"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
-                        <p style="text-align: center; margin-top: 10px; font-size: 13px; color: #666;">Area Komunal
-                        </p>
-                    </div>
-                    <div class="gallery-2col-item">
-                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400"
-                            alt="Fasilitas Lengkap"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px;">
-                        <p style="text-align: center; margin-top: 10px; font-size: 13px; color: #666;">Fasilitas Lengkap
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>1️⃣ Apakah legalitas Masuda aman?</h4>
-                    <p>Ya. Unit Masuda Rukost Premium memiliki Sertifikat Hak Milik (SHM) yang jelas & resmi.
-                        Kepemilikan aman secara hukum.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>2️⃣ Apakah proyeknya sudah terbangun?</h4>
-                    <p>Masuda telah melalui 3 tahap pembangunan yang sudah terbangun, dan Tahap 4 saat ini sedang
-                        berjalan.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>3️⃣ Bagaimana potensi okupansi?</h4>
-                    <p>Masuda berada di lokasi strategis dekat IPB dengan demand mahasiswa yang stabil setiap tahun,
-                        sehingga mendukung okupansi tinggi.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>4️⃣ Apakah saya harus mengelola kost sendiri?</h4>
-                    <p>Tidak. Semua operasional dikelola oleh manajemen profesional, mulai dari tenant hingga
-                        maintenance.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>5️⃣ Bagaimana sistem income / sewanya?</h4>
-                    <p>Properti dikonsep sebagai aset produktif yang dirancang untuk menghasilkan dari sistem sewa
-                        rukost.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>6️⃣ Siapa target penyewanya?</h4>
-                    <p>Mayoritas mahasiswa & tenaga profesional di sekitar kawasan IPB Bogor — market nyata & berulang.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <h4>7️⃣ Apakah unit sudah fully furnished?</h4>
-                    <p>Ya. Unit Masuda Rukost Premium disiapkan dalam kondisi fully furnished & siap operasional.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>8️⃣ Kenapa Masuda berbeda dari rukost lain?</h4>
-                    <p>Karena Masuda menggabungkan: Legalitas aman, Lokasi strategis, Konsep premium, Demand market
-                        jelas, Manajemen profesional, dan Fokus aset produktif.</p>
-                </div>
-            </div>
-
-            <div
-                style="text-align: center; margin-top: 50px; padding: 40px; background: #fff; border-radius: 20px; border: 2px solid #f97316;">
-                <p style="font-size: 18px; margin-bottom: 25px; color: #555;">Masih ragu? Tim kami siap membantu Anda
-                    memahami detail
-                    investasi, simulasi income, hingga proses kepemilikan.</p>
-                <a href="#" class="btn">Amankan Unit Terakhir Masuda
-                    Sekarang.</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <h3>Masuda Rukost Premium</h3>
-            <p>Investasi Properti Produktif Dekat IPB</p>
-            <p style="margin-top:10px;font-size:14px;">Copyright © 2026</p>
-        </div>
-    </footer>
 
 </body>
 
