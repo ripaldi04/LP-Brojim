@@ -1,0 +1,2756 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALHAMBRA MEMORIAL PARK</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1240319180820560');
+        fbq('track', 'PageView');
+        fbq('track', 'Contact');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1240319180820560&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        :root {
+            --primary: #8a2d0b;
+            --secondary: #ffd700;
+            --dark-primary: #6b2208;
+            --light-primary: #a8401a;
+            --white: #ffffff;
+            --bg-slate: #8a2d0b;
+            --bg-dark: #8a2d0b;
+            --gradient-primary: linear-gradient(135deg, #8a2d0b 0%, #a8401a 25%, #8a2d0b 50%, #6b2208 75%, #8a2d0b 100%);
+            --gradient-gold: linear-gradient(135deg, #ffd700 0%, #FFEB3B 25%, #ffd700 50%, #FFC107 75%, #ffd700 100%);
+        }
+
+        body {
+            background: var(--white);
+            color: #0F172A;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 96%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 800;
+            line-height: 1.15;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .text-orange {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #8a2d0b;
+            color: white;
+            padding: 20px 48px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(138, 45, 11, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(138, 45, 11, 0.4);
+        }
+
+        .btn-large {
+            padding: 24px 56px;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+
+        /* NAVBAR - Floating Style */
+        .navbar {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 16px 60px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 60px;
+            border: 1px solid rgba(138, 45, 11, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0F172A;
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2;
+        }
+
+        .navbar-logo .logo-sub {
+            font-size: 11px;
+            font-weight: 600;
+            color: #8a2d0b;
+            letter-spacing: 1px;
+        }
+
+        .navbar-logo span {
+            color: #8a2d0b;
+        }
+
+        /* HERO - Full Width Banner Style */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, #ffffff 0%, #fff 30%, #ffffff 100%);
+            padding-top: 140px;
+            margin-top: 30px;
+            margin-bottom: -40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-proof-icon {
+            color: #8a2d0b;
+            font-size: 18px;
+        }
+
+        .cta-box {
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 14px;
+            background: #8a2d0b;
+            /* dark luxury */
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cta-alert {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .harga {
+            font-size: 32px;
+            font-weight: 800;
+            color: #8a2d0b;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(138, 45, 11, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(138, 45, 11, 0.08) 0%, transparent 40%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(138, 45, 11, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #8a2d0b;
+            margin-bottom: 28px;
+            border: 1px solid rgba(138, 45, 11, 0.2);
+        }
+
+        .benefits-grid {
+            display: grid;
+            gap: 28px;
+        }
+
+        .benefit-card {
+            padding: 28px;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .benefit-icon {
+            color: var(--secondary);
+            /* gold premium */
+            font-size: 18px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 28px;
+            color: #0F172A;
+            letter-spacing: -2px;
+        }
+
+        .hero .subtitle {
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: #475569;
+            font-weight: 500;
+            line-height: 1.7;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-media {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+
+        .solution-grid {
+            display: grid;
+            gap: 28px;
+        }
+
+        .solution-card {
+            padding: 28px;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .solution-card .icon {
+            font-size: 24px;
+            color: #8a2d0b;
+            /* gold premium */
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+
+        .video-placeholder {
+            background: #000;
+            height: 500px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .video-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-badge {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: #8a2d0b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(138, 45, 11, 0.4);
+        }
+
+        /* SOCIAL PROOF - Horizontal Stats Bar */
+        .social-proof {
+            background: var(--bg-slate);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: -40px;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(138, 45, 11, 0.5), transparent);
+        }
+
+        .proof-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .proof-header h2 {
+            font-size: 44px;
+            margin-bottom: 16px;
+            color: #ffd700;
+            letter-spacing: -0.5px;
+        }
+
+        .proof-header p {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .proof-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proof-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .proof-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-8px);
+        }
+
+        .proof-item:hover::after {
+            opacity: 1;
+        }
+
+        .proof-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .proof-item h3 {
+            font-size: 56px;
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -2px;
+        }
+
+        .proof-item .proof-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .proof-item .proof-desc {
+            font-size: 13px;
+            color: #ffd700;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .proof-item .proof-highlight {
+            font-size: 12px;
+            color: #ffd700;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* PROOF SUMMARY - Banner Style */
+        .proof-summary {
+            background: var(--white);
+            color: #0F172A;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proof-summary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(138, 45, 11, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .proof-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .proof-check {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #0F172A;
+        }
+
+        .proof-icon {
+            font-size: 18px;
+            color: #8a2d0b;
+            /* warna gold premium */
+        }
+
+        .proof-quote {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .proof-quote h2 {
+            font-size: 42px;
+            line-height: 1.4;
+            color: #0F172A;
+            letter-spacing: -1px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .proof-points {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .proof-intro {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #0F172A;
+        }
+
+        .proof-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .proof-check {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            padding: 18px 32px;
+            border-radius: 14px;
+            font-weight: 600;
+            color: #0F172A;
+            border: 1px solid rgba(138, 45, 11, 0.15);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .proof-check:hover {
+            border-color: rgba(138, 45, 11, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(138, 45, 11, 0.15);
+        }
+
+        .proof-check .check-icon {
+            font-size: 22px;
+        }
+
+        /* GALLERY - Horizontal Scroll Style */
+        .gallery-section {
+            background: #fff;
+            padding: 120px 0;
+            overflow: hidden;
+            margin-bottom: -40px;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 38px;
+            letter-spacing: -0.5px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .gallery-item {
+            background: #F8FAFC;
+            padding: 16px;
+            border-radius: 24px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-12px) rotate(2deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .gallery-item p {
+            text-align: center;
+            margin-top: 16px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #0F172A;
+        }
+
+        .realita-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .realita-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #0F172A;
+        }
+
+        .realita-icon {
+            font-size: 18px;
+            color: #8a2d0b;
+            /* merah elegan, bukan merah terang */
+        }
+
+        /* PROBLEM - Zigzag Layout */
+        .problem {
+            background: var(--bg-slate);
+            padding: 120px 0;
+            margin-bottom: -40px;
+        }
+
+        .problem h2 {
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 44px;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .problem-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #ffd700;
+            margin-bottom: 56px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problem-title {
+            text-align: center;
+            margin-bottom: 92px;
+            /* background: var(--gradient-primary);
+            -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
+            /* background-clip: text; */
+            color: #ffd700;
+            font-size: 44px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 32px 24px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .problem-card:hover {
+            background: rgba(138, 45, 11, 0.1);
+            transform: translateY(-10px);
+            border-color: rgba(138, 45, 11, 0.3);
+        }
+
+        .problem-card p {
+            color: #fff;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .realita-box {
+            background: linear-gradient(135deg, #8a2d0b 0%, #8a2d0b 100%);
+            padding: 64px;
+            border-radius: 32px;
+            margin-top: 56px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid rgba(138, 45, 11, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .realita-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(138, 45, 11, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .realita-box h3 {
+            margin-bottom: 24px;
+            font-size: 30px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .realita-box p {
+            font-size: 19px;
+            color: #ffd700;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .realita-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .realita-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 32px 24px;
+            border-radius: 18px;
+            font-weight: 600;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .realita-item:hover {
+            background: rgba(138, 45, 11, 0.2);
+            transform: scale(1.05);
+        }
+
+        .realita-icon {
+            font-size: 44px;
+        }
+
+        .solution-intro {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 64px auto 32px;
+            color: #fff;
+            padding: 28px;
+            background: linear-gradient(135deg, rgba(138, 45, 11, 0.2) 0%, rgba(138, 45, 11, 0.1) 100%);
+            border-radius: 18px;
+            max-width: 680px;
+            border: 1px solid rgba(138, 45, 11, 0.3);
+        }
+
+        /* SOLUTION - Large Icon Cards */
+        .solution {
+            background: var(--white);
+            padding: 120px 0;
+        }
+
+        .solution h2 {
+            text-align: center;
+            margin-bottom: 64px;
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+        }
+
+        .solution-card {
+            background: #fff;
+            padding: 40px 24px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-16px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(138, 45, 11, 0.15);
+        }
+
+        .solution-card .icon {
+            font-size: 52px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .solution-card h4 {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #0F172A;
+        }
+
+        .solution-card p {
+            color: #0F172A;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        /* PREMIUM INTRO - Split Section */
+        .premium-intro {
+            background: var(--bg-slate);
+            padding: 0;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-intro .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 140px 0;
+        }
+
+        .premium-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 0%, rgba(138, 45, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 100%, rgba(138, 45, 11, 0.1) 0%, transparent 50%);
+        }
+
+        .premium-card {
+            position: relative;
+            z-index: 1;
+        }
+
+        .premium-card .masuda {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #fff;
+            letter-spacing: -1.5px;
+            font-weight: 700;
+
+        }
+
+        .premium-card .bukan {
+            font-size: 28px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 28px;
+            font-weight: 700;
+        }
+
+        .premium-card>p {
+            font-size: 20px;
+            color: #ffd700;
+            margin-bottom: 5px;
+            line-height: 1.7;
+        }
+
+        .premium-desc {
+            font-size: 16px;
+            color: #ffd700;
+            line-height: 1.8;
+        }
+
+        .premium-visual {
+            position: relative;
+            z-index: 1;
+        }
+
+        .premium-visual-box {
+            background: linear-gradient(145deg, rgba(138, 45, 11, 0.2), rgba(138, 45, 11, 0.1));
+            border-radius: 32px;
+            padding: 60px;
+            border: 1px solid rgba(138, 45, 11, 0.3);
+            text-align: center;
+        }
+
+        .premium-visual-box .big-number {
+            font-size: 100px;
+            font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .premium-visual-box p {
+            font-size: 18px;
+            color: #ffd700;
+            margin-top: 16px;
+        }
+
+        /* FEATURES - Alternating Layout */
+        .features {
+            background: #fff;
+            padding: 140px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+
+        .lead {
+            text-align: center;
+            font-size: 22px;
+            color: #0F172A;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .lead-sub {
+            text-align: center;
+            font-size: 18px;
+            color: #0F172A;
+            max-width: 750px;
+            margin: 0 auto 64px;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            padding: 32px;
+            background: linear-gradient(145deg, #F8FAFC, #fff);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid #F1F5F9;
+        }
+
+        .feature-item:hover {
+            background: #fff;
+            transform: translateX(12px);
+            box-shadow: 0 20px 50px rgba(138, 45, 11, 0.1);
+            border-color: rgba(138, 45, 11, 0.2);
+        }
+
+        .feature-item .check {
+            color: #8a2d0b;
+            font-size: 28px;
+            font-weight: bold;
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(138, 45, 11, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #0F172A;
+        }
+
+        .feature-item p {
+            color: #0F172A;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* INVESTMENT APPEAL - Highlight Cards */
+        .investment-appeal {
+            background: var(--white);
+            padding: 140px 0;
+        }
+
+        .investment-appeal h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+
+        .investment-appeal .lead-sub {
+            margin-bottom: 64px;
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .investment-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .investment-item:hover {
+            border-color: #8a2d0b;
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(138, 45, 11, 0.12);
+        }
+
+        .investment-item .check {
+            color: #8a2d0b;
+            font-size: 32px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .investment-item h4 {
+            margin-bottom: 14px;
+            font-size: 20px;
+            color: #0F172A;
+        }
+
+        .investment-item p {
+            color: #0F172A;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* BENEFITS - Big Cards */
+        .benefits {
+            background: var(--bg-slate);
+            padding: 140px 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 104px;
+            font-size: 43px;
+            color: #ffd700;
+            letter-spacing: -1px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px 28px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .benefit-card:hover {
+            background: rgba(138, 45, 11, 0.1);
+            transform: translateY(-12px);
+            border-color: rgba(138, 45, 11, 0.3);
+        }
+
+        .benefit-card h4 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .benefit-card p {
+            color: #ffd700;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* QUOTE - Big Typography */
+        .quote-section {
+            background: var(--gradient-primary);
+            color: #fff;
+            text-align: center;
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 300px;
+            opacity: 0.1;
+            font-weight: 800;
+            font-family: Georgia, serif;
+        }
+
+        .quote-section h2 {
+            font-size: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.4;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .quote-author {
+            margin-top: 40px;
+            font-size: 20px;
+            color: #ffd700;
+        }
+
+        /* TESTIMONIAL - Large Cards */
+        .testimonial {
+            background: var(--white);
+            padding: 140px 0;
+        }
+
+        .testimonial h2 {
+            text-align: center;
+            margin-bottom: 104px;
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+
+        .testimonial-main {
+            background: #fff;
+            padding: 64px;
+            border-radius: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(138, 45, 11, 0.1);
+        }
+
+        .testimonial-main img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 24px;
+            margin-bottom: 32px;
+        }
+
+        .testimonial-main p {
+            font-size: 22px;
+            color: #0F172A;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .testimonial-gallery {
+            margin-top: 64px;
+        }
+
+        .testimonial-gallery h3 {
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: 28px;
+            color: #0F172A;
+        }
+
+        .gallery-2col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-gallery .gallery-2col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .kavling-card {
+            transition: all 0.3s ease;
+        }
+
+        .kavling-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(138, 45, 11, 0.25);
+            border-color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-gallery .gallery-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-2col-item {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-2col-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-2col-item:hover img {
+            transform: scale(1.12);
+        }
+
+        .gallery-2col-item p {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #0F172A;
+            font-weight: 500;
+        }
+
+        .testimonial-quote {
+            text-align: center;
+            margin-top: 64px;
+            padding: 48px;
+            background: #fff;
+            border-radius: 28px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid rgba(138, 45, 11, 0.15);
+        }
+
+        .testimonial-quote p {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 14px;
+        }
+
+        .testimonial-quote .sub {
+            font-size: 17px;
+            color: #0F172A;
+        }
+
+        /* CTA - Big Impact */
+        .cta-section {
+            background: var(--bg-slate);
+            color: #fff;
+            text-align: center;
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: -40px;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(138, 45, 11, 0.12) 0%, transparent 50%);
+        }
+
+        .cta-section h2 {
+            font-size: 52px;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .cta-section .intro {
+            font-size: 22px;
+            margin-bottom: 32px;
+            color: #ffd700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-proof-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 36px 24px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .cta-proof-item:hover {
+            background: rgba(138, 45, 11, 0.15);
+            border-color: rgba(138, 45, 11, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .cta-proof-icon {
+            font-size: 44px;
+        }
+
+        .cta-proof-text {
+            font-weight: 700;
+            color: #fff;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .cta-list span {
+            background: rgba(138, 45, 11, 0.12);
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #fff;
+            border: 1px solid rgba(138, 45, 11, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-list span:hover {
+            background: rgba(138, 45, 11, 0.2);
+        }
+
+        .cta-box {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 56px;
+            border-radius: 32px;
+            margin-bottom: 44px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box p {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .cta-section .harga {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .cta-section .btn {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-requirements {
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-requirements>p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .cta-reqs {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .cta-reqs span {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 14px 26px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-reqs span:hover {
+            background: rgba(138, 45, 11, 0.2);
+        }
+
+        .cta-conclusion {
+            font-size: 32px;
+            font-weight: 800;
+            margin-top: 40px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* URGENCY CTA - Bold Style */
+        .urgency-section {
+            background: #fff;
+            padding: 100px 0;
+            text-align: center;
+            border-top: 6px solid #8a2d0b;
+        }
+
+        .urgency-section h2 {
+            color: #0F172A;
+            font-size: 38px;
+            margin-bottom: 32px;
+        }
+
+        .urgency-items {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+        }
+
+        .urgency-items span {
+            color: #0F172A;
+            font-size: 18px;
+            background: #F1F5F9;
+            padding: 20px 32px;
+            border-radius: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .urgency-items span:hover {
+            background: rgba(138, 45, 11, 0.1);
+            color: #8a2d0b;
+        }
+
+        .urgency-cta {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .urgency-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 24px 60px;
+            border-radius: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+        }
+
+        .urgency-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 45px rgba(37, 211, 102, 0.45);
+            background: #1DA851;
+        }
+
+        .urgency-note {
+            color: #0F172A;
+            margin-top: 32px;
+            font-size: 18px;
+        }
+
+        /* FOUNDER - Modern Split */
+        .founder {
+            background: var(--white);
+            padding: 140px 0;
+        }
+
+        .founder h2 {
+            text-align: center;
+            margin-bottom: 64px;
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .founder-image {
+            background: #e8e8e8;
+            height: 560px;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-info {
+            padding: 10px;
+        }
+
+        .founder-info h3 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 14px;
+            font-size: 38px;
+        }
+
+        .founder-info h4 {
+            margin-bottom: 32px;
+            color: #0F172A;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .founder-info p {
+            color: #0F172A;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        .founder-info p+p {
+            margin-top: 20px;
+        }
+
+        /* FAQ - Clean List */
+        .faq {
+            background: var(--bg-slate);
+            padding: 140px 0;
+        }
+
+        .faq h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 64px;
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, #F8FAFC, #fff);
+            padding: 36px;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border-left: 5px solid #8a2d0b;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-item:hover {
+            background: #fff;
+            transform: translateX(12px);
+            box-shadow: 0 20px 45px rgba(138, 45, 11, 0.1);
+        }
+
+        .faq-item h4 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 18px;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .faq-item p {
+            color: #0F172A;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .faq-cta {
+            text-align: center;
+            margin-top: 72px;
+            padding: 60px;
+            background: var(--white);
+            border-radius: 32px;
+            border: 2px solid rgba(138, 45, 11, 0.15);
+        }
+
+        .faq-cta p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            color: #0F172A;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-slate);
+            color: #fff;
+            text-align: center;
+            padding: 72px 0;
+        }
+
+        footer h3 {
+            margin-bottom: 14px;
+            font-size: 28px;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+
+        /* FLOATING WA BUTTON */
+        .wa-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 9999;
+            background: #25D366;
+            width: 70px;
+            height: 70px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.55);
+        }
+
+        .wa-float svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 1200px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .solution-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .realita-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .investment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-2col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-image {
+                height: 400px;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .premium-intro .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .premium-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .navbar {
+                top: 12px;
+                padding: 12px 24px;
+                border-radius: 40px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                letter-spacing: -1px;
+            }
+
+            .hero .subtitle {
+                font-size: 17px;
+            }
+
+            .hero-badge {
+                font-size: 12px;
+            }
+
+            .video-placeholder {
+                height: auto;
+                aspect-ratio: 16/9;
+                border-radius: 20px;
+            }
+
+            .video-placeholder iframe {
+                height: 100%;
+                width: 100%;
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .realita-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-2col {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .urgency-items {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .premium-card h2 {
+                font-size: 36px;
+            }
+
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
+            .urgency-cta {
+                font-size: 28px;
+            }
+
+            .founder h2,
+            .testimonial h2,
+            .benefits h2,
+            .features h2,
+            .solution h2,
+            .faq h2,
+            .investment-appeal h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- FLOATING WA BUTTON -->
+    <a href="https://wa.wizard.id/9e9005" class="wa-float" target="_blank" title="Chat via WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="white"
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo"><span>Alhambra</span><span class="logo-sub">Memorial Park</span></a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">🕊️ Pemakaman Islami Premium</div>
+            <div class="hero-content">
+                <h1>Pemakaman Islami yang Tertata, Terawat, dan Siap Saat Dibutuhkan.
+                    Alhambra Memorial Park - Pemakaman Bernuansa Andalusia Pertama di Indonesia
+                    </span></h1>
+                <p class="subtitle">Di tengah krisis lahan makam dan banyaknya pemakaman yang tidak terawat,
+                    Alhambra Memorial Park hadir sebagai solusi pemakaman Islami, dengan sistem profesional, layanan
+                    lengkap, dan konsep memorial park pertama bernuansa Andalusia di Indonesia.</p>
+            </div>
+            <div class="hero-media">
+                <div class="video-placeholder" style="padding: 0; background: #000;">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/1YNOCeTyQ8M?autoplay=0&rel=0"
+                        title="Video Masuda Rukost Premium" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen style="border-radius: 32px;">
+                    </iframe>
+                </div>
+                <div style="text-align: center; margin-top: 32px;">
+                    <a href="#cta" class="btn">👉 Lihat Ketersediaan Unit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-header">
+                <h2>Krisis Lahan Makam Semakin Nyata</h2>
+                <p>Beberapa media memberitakan:</p>
+            </div>
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=400&fit=crop"
+                        alt="Lahan makam sempit"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">Lahan makam Jakarta & Bogor makin sempit </p>
+                </div>
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=600&h=400&fit=crop"
+                        alt="Pemakaman terendam banjir"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">Pemakaman yang terendam oleh banjir
+                    </p>
+                </div>
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=400&fit=crop"
+                        alt="Satu liang beberapa jenazah"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">satu liang untuk beberapa jenazah</p>
+                </div>
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop"
+                        alt="Makam tidak terawat"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">Banyak makam tidak terawat
+                    </p>
+                </div>
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=600&h=400&fit=crop"
+                        alt="Rawan banjir"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">Lokasi RAWAN BANJIR</p>
+                </div>
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1576016770956-debb63d92058?w=600&h=400&fit=crop"
+                        alt="Makam tidak tertata"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">Pengelolaan TIDAK TERTATA</p>
+                </div>
+                <div class="proof-item">
+                    <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=600&h=400&fit=crop"
+                        alt="Keluarga panik"
+                        style="width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 24px;">
+                    <p class="proof-label">Keluarga PANIK SAAT DARURAT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE & PROOF -->
+    <!--  <section class="quote-section">-->
+    <!--    <div class="container">-->
+    <!--        <h2>"Investor cerdas tidak menunggu properti viral.<br>Mereka masuk sebelum SOLD OUT"</h2>-->
+    <!--    </div>-->
+    <!--</section>-->
+    <!--<section class="proof-summary">-->
+    <!--    <div class="container">-->
+    <!--        <div class="proof-points">-->
+    <!--            <p class="proof-intro">Masuda Rukost Premium telah membuktikan daya tariknya:</p>-->
+    <!--            <div class="proof-list">-->
+    <!--                <div class="proof-check">-->
+    <!--                    <i class="fa-solid fa-building proof-icon"></i>-->
+    <!--                    <span>80+ Unit SOLD OUT</span>-->
+    <!--                </div>-->
+
+    <!--                <div class="proof-check">-->
+    <!--                    <i class="fa-solid fa-helmet-safety proof-icon"></i>-->
+    <!--                    <span>3 Tahap Terbangun</span>-->
+    <!--                </div>-->
+
+    <!--                <div class="proof-check">-->
+    <!--                    <i class="fa-solid fa-handshake proof-icon"></i>-->
+    <!--                    <span>80+ Investor</span>-->
+    <!--                </div>-->
+
+    <!--                <div class="proof-check">-->
+    <!--                    <i class="fa-solid fa-chart-line proof-icon"></i>-->
+    <!--                    <span>Tahap 4 On Progress</span>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
+    <!-- QUESTIONS SECTION -->
+    <section class="questions-section"
+        style="background: #fff; padding: 80px 20px; text-align: center; margin-bottom: -80px;">
+        <div class="container">
+            <div
+                style="max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, #fff 0%, #fff 100%); border-radius: 24px; padding: 50px 40px; box-shadow: 0 10px 40px rgba(138, 45, 11, 0.15); border: 2px solid #8a2d0b;">
+                <h2 style="color: #1a1a2e; font-size: 26px; margin-bottom: 24px; line-height: 1.6;">
+                    <span style="color: #8a2d0b; font-weight: bold;"></span> Sudahkah keluarga Anda
+                    memiliki<br>tempat peristirahatan yang <span style="color: #8a2d0b;">layak dan tertata</span>?
+                </h2>
+                <div style="width: 60px; height: 4px; background: #8a2d0b; margin: 0 auto 24px; border-radius: 2px;">
+                </div>
+                <p style="color: #666; font-size: 16px; margin-bottom: 24px; line-height: 1.6;">
+                    Karna keresahan ini,<br>makanya kita hadirkan
+                </p>
+                <h3
+                    style="color: #1a1a2e; font-size: 28px; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">
+                    ALHAMBRA <span style="color: #8a2d0b;">MEMORIAL PARK</span>
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2><span class="text-orange">Kenapa Harus AlHambra Memorial
+                    Park?</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../../image/tahap1.PNG" alt="Foto Akad Investor"
+                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px;">
+                    <p>Didukung dan dikunjungi tokoh nasional & ulama (KH Muhyiddin)</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../../image/tahap2.PNG" alt="Foto Unit Tahap 1-3"
+                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px;">
+                    <p>Berada di Kota Bogor – lokasi strategis dekat Exit Toll Kota Bogor (Yasmin) dan Kayumanis</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../../image/tahap3.PNG" alt="Foto Bangunan & Kamar"
+                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px;">
+                    <p>Sistem legal & sesuai Fatwa MUI No.9 Tahun 2014</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../../image/tahap4.PNG" alt="Viewers TikTok"
+                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 18px;">
+                    <p> Sudah berjalan dan terus berkembang</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem">
+        <div class="container">
+            <!-- <h2 style="text-align: center; margin-bottom: 32px;">Investasi Properti Tidak Selalu<br><span
+                    class="text-orange">Seindah yang Dibayangkan.</span></h2>
+            <p class="problem-subtitle">Banyak investor masuk ke properti dengan harapan cuan… namun yang terjadi justru
+                sebaliknya.</p> -->
+            <h3 class="problem-title">Kenalan Dulu dengan Pemakaman Bernuansa Andaluasia Pertama di Indonesia</h3>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <p>✅ Pemakaman Islami bernuansa Andalusia pertama di Indonesia</p>
+                </div>
+                <div class="problem-card">
+                    <p>✅ Konsep Memorial Park (tanpa nisan menonjol)</p>
+                </div>
+                <div class="problem-card">
+                    <p>✅ Terinspirasi dari keindahan Alhambra dan kemegahan Andalusia</p>
+                </div>
+                <div class="problem-card">
+                    <p>✅ Kawasan khusus Muslim sesuai adab syariat</p>
+                </div>
+            </div>
+            <!-- <div class="realita-box">
+                <h3>Realita yang Jarang Dibicarakan</h3>
+                <p>Properti bisa jadi aset produktif… tapi juga bisa berubah menjadi:</p>
+                <div class="realita-grid">
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-money-bill-wave realita-icon"></i>
+                        <span>Beban cicilan</span>
+                    </div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-triangle-exclamation realita-icon"></i>
+                        <span>Sumber stres</span>
+                    </div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-clock realita-icon"></i>
+                        <span>Penyita waktu</span>
+                    </div>
+
+                    <div class="realita-item">
+                        <i class="fa-solid fa-arrow-trend-down realita-icon"></i> <span>Aset yang tidak
+                            berkembang</span>
+                    </div>
+
+                </div> -->
+        </div>
+        <p class="solution-intro">Bukan sekadar makam. Tapi kawasan spiritual dan eduwisata Islam.</p>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <!-- <section class="solution">
+        <div class="container">
+            <h2 style="text-align: center;"><span class="text-orange">Karena itu Masuda Rukost Premium Hadir…</span>
+            </h2>
+            <div class="solution-grid">
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-building icon"></i>
+                    <h4>Sudah dikonsep untuk demand nyata</h4>
+                    <p>Dirancang berdasarkan kebutuhan pasar nyata, bukan sekadar konsep.</p>
+                </div>
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-location-dot icon"></i>
+                    <h4>Dirancang untuk okupansi tinggi</h4>
+                    <p>Lokasi strategis dengan permintaan penyewa yang terjamin.</p>
+                </div>
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-file-contract icon"></i>
+                    <h4>Legalitas aman (SHM jelas)</h4>
+                    <p>Sertifikat Hak Milik yang jelas dan aman secara hukum.</p>
+                </div>
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-user-tie icon"></i>
+                    <h4>Dikelola profesional</h4>
+                    <p>Tim manajemen profesional mengelola semua operasional.</p>
+                </div>
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-chart-line icon"></i>
+                    <h4>Fokus cashflow & pertumbuhan aset</h4>
+                    <p>Dirancang untuk menghasilkan income, bukan sekadar modal.</p>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+
+    <!-- PREMIUM INTRO -->
+    <!-- <section class="premium-intro">
+        <div class="container">
+            <div class="premium-card">
+                <h2 class="masuda">Masuda Rukost Premium</h2>
+                <h3 class="bukan">Bukan Sekadar Properti</h3>
+                <p>Ini Aset Produktif yang Sudah Dikondisikan Menghasilkan <br>Income Tiap Bulannya.</p>
+                <p class="premium-desc">Masuda Rukost Premium dirancang untuk investor yang tidak hanya ingin memiliki
+                    properti tapi ingin memiliki properti yang bekerja menghasilkan cashflow terus bert-growth.</p>
+            </div>
+            <div class="premium-visual">
+                <div class="premium-visual-box">
+                    <div class="big-number">12</div>
+                    <p>Unit Tersedia Sekarang</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- WHAT YOU GET SECTION -->
+    <section class="features">
+        <div class="container">
+            <h2 style="margin-bottom: 110px;">Apa Saja yang Anda Dapatkan di <span class="text-orange">AlHambra Memorial
+                    Park?</span></h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto;">
+                <!-- Single -->
+                <div class="kavling-card"
+                    style="background: linear-gradient(135deg, #fff 0%, #fff5f0 100%); border: 2px solid #8a2d0b; border-radius: 20px; padding: 30px 20px; text-align: left;">
+                    <h3 style="color: #8a2d0b; font-size: 22px; margin-bottom: 8px; font-weight: 700;">SINGLE</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📐 2,2 x 1,5
+                            m</li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📏 3,3 m²
+                        </li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">🕳️ 1 Lobang
+                        </li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ 2,5 m Walkway</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Walkway</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Exclusive Entrance</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Private Area</li>
+                    </ul>
+                </div>
+                <!-- Couple -->
+                <div class="kavling-card"
+                    style="background: linear-gradient(135deg, #fff 0%, #fff5f0 100%); border: 2px solid #8a2d0b; border-radius: 20px; padding: 30px 20px; text-align: left;">
+                    <h3 style="color: #8a2d0b; font-size: 22px; margin-bottom: 8px; font-weight: 700;">COUPLE</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📐 2,2 x 2,5
+                            m</li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📏 5,5 m²
+                        </li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">🕳️ 2 Lobang
+                        </li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ 2,5 m</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Walkway</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Exclusive Entrance</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Private Area</li>
+                    </ul>
+                </div>
+                <!-- Family -->
+                <div class="kavling-card"
+                    style="background: linear-gradient(135deg, #fff 0%, #fff5f0 100%); border: 2px solid #8a2d0b; border-radius: 20px; padding: 30px 20px; text-align: left;">
+                    <h3 style="color: #8a2d0b; font-size: 22px; margin-bottom: 8px; font-weight: 700;">FAMILY</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📐 4,9 x 3 m
+                        </li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📏 14,7 m²
+                        </li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">🕳️ 4 Lobang
+                        </li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ 2,5 m</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Walkway</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Exclusive Entrance</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Private Area</li>
+                    </ul>
+                </div>
+                <!-- Super Family -->
+                <div class="kavling-card"
+                    style="background: linear-gradient(135deg, #fff 0%, #fff5f0 100%); border: 2px solid #8a2d0b; border-radius: 20px; padding: 30px 20px; text-align: left;">
+                    <h3 style="color: #8a2d0b; font-size: 22px; margin-bottom: 8px; font-weight: 700;">SUPER FAMILY</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📐 6 x 5,4 m
+                        </li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">📏 32,4 m²
+                        </li>
+                        <li style="color: #1a1a2e; font-size: 15px; margin-bottom: 8px; font-weight: 600;">🕳️ 6 Lobang
+                        </li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ 2,5 m</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Walkway</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Exclusive Entrance</li>
+                        <li style="color: #555; font-size: 14px; margin-bottom: 8px;">✅ Private Area</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="features-grid" style="margin-top: 60px;">
+                <div class="feature-item">
+                    <span class="check">🔧</span>
+                    <h4>Lifetime Maintenance</h4>
+                </div>
+                <div class="feature-item">
+                    <span class="check">🛡️</span>
+                    <h4>One Gate System & Security 24 jam</h4>
+                </div>
+                <div class="feature-item">
+                    <span class="check">🌳</span>
+                    <h4>Walkway rapi & landscape hijau</h4>
+                </div>
+                <div class="feature-item">
+                    <span class="check">🕌</span>
+                    <h4>Ustadz pendamping & prosesi lengkap</h4>
+                </div>
+                <div class="feature-item">
+                    <span class="check">📜</span>
+                    <h4>Sertifikat & database ahli waris</h4>
+                </div>
+                <div class="feature-item">
+                    <span class="check">🤲</span>
+                    <h4>Program Wakaf Jariyah</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTMENT APPEAL -->
+    <!--<section class="investment-appeal">-->
+    <!--    <div class="container">-->
+    <!--        <h2>Kenapa Ini Menarik Secara <span class="text-orange">Investasi?</span></h2>-->
+    <!--        <p class="lead-sub" style="margin-bottom: 56px;">Karena Masuda menjawab 3 kebutuhan utama investor:</p>-->
+    <!--        <div class="investment-grid">-->
+    <!--            <div class="investment-item">-->
+    <!--                <span class="check">✅</span>-->
+    <!--                <div>-->
+    <!--                    <h4>Keamanan Aset</h4>-->
+    <!--                    <p>Legal & market yang terjamin untuk investasi jangka panjang.</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="investment-item">-->
+    <!--                <span class="check">✅</span>-->
+    <!--                <div>-->
+    <!--                    <h4>Produktivitas Properti</h4>-->
+    <!--                    <p>Cashflow konsisten yang membuat properti bekerja untuk Anda.</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="investment-item">-->
+    <!--                <span class="check">✅</span>-->
+    <!--                <div>-->
+    <!--                    <h4>Efisiensi Waktu</h4>-->
+    <!--                    <p>Tanpa repot kelola — profesional yang mengelola semuanya.</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+        <div class="container">
+            <h2 style="text-align: center;"><span>Kami Memberikan Bukan Cuma Bangunan Fisik tapi Juga Soal :</span>
+            </h2>
+            <div class="solution-grid">
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-heart-pulse icon"></i>
+                    <h4>Ketenangan</h4>
+                    <p>keluarga tidak panik saat darurat.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fa-solid fa-scroll icon"></i>
+                    <h4>Kepastian Hukum</h4>
+                    <p>sertifikat resmi & ahli waris tercatat.</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fa-solid fa-mosque icon"></i>
+                    <h4>Kenyamanan Ziarah</h4>
+                    <p>tertata, bersih, tidak menyeramkan.</p>
+                </div>
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-book-quran icon"></i>
+                    <h4>Kepatuhan Syariat</h4>
+                    <p>Tsesuai Fatwa MUI.</p>
+                </div>
+
+                <div class="solution-card">
+                    <i class="fa-solid fa-hands-praying icon"></i>
+                    <h4>Amal Berkelanjutan</h4>
+                    <p>program wakaf jariyah.</p>
+                </div>
+            </div>
+        </div>
+        <p class="solution-intro">Yang Anda beli bukan tanah. Yang Anda amankan adalah ketenangan keluarga.</p>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial">
+        <div class="container">
+            <h2><span class="text-orange">Testimoni</span></h2>
+            <!-- <div class="testimonial-main">
+                <img src="../../image/investor.jpg" alt="Akad Investor"
+                    style="width: 100%; height: 360px; object-fit: cover; border-radius: 24px; margin-bottom: 32px;">
+                <p>Masuda Rukost Premium telah dipilih oleh puluhan investor yang mengutamakan keamanan aset &
+                    produktivitas investasi.</p>
+            </div> -->
+            <!-- INVESTOR PHOTO GALLERY -->
+            <div class="testimonial-gallery">
+                <div class="gallery-2col">
+                    <div class="gallery-2col-item">
+                        <img src="../../image/tandatangan.jpg" alt="Pengalaman ziarah nyaman"
+                            style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">
+                        <p>Pengalaman ziarah nyaman</p>
+                    </div>
+                    <div class="gallery-2col-item">
+                        <img src="../../image/penyerahandokumen.jpeg" alt="Proses cepat & profesional"
+                            style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">
+                        <p>Proses cepat & profesional</p>
+                    </div>
+                    <div class="gallery-2col-item">
+                        <img src="../../image/serahterima.jpeg" alt="Foto Serah Terima"
+                            style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">
+                        <p>Tidak merepotkan keluarga</p>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="testimonial-quote">-->
+            <!--    <p>"Investor lain sudah mengamankan unitnya." </p>-->
+            <!--    <p class="sub">Masuda bukan konsep baru. Ini proyek yang sudah berjalan & diserap pasar.</p>-->
+            <!--    <p style="margin-top: 20px; font-size: 22px; font-weight: 700; color: #0F172A;">"Investor cerdas tidak-->
+            <!--        menunggu sampai unit habis…"</p>-->
+            <!--</div>-->
+
+        </div>
+    </section>
+
+    <!-- BONUS SECTION -->
+    <section class="bonus-section" style="background: #8a2d0b; padding: 60px 20px; text-align: center;">
+        <div class="container">
+            <h2 style="color: #ffd700; font-size: 28px; margin-bottom: 40px; font-weight: 800;">🎁 BONUS SPESIAL UNTUK
+                ANDA</h2>
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;">
+                <div
+                    style="background: rgba(255,255,255,0.1); border: 2px solid #ffd700; border-radius: 20px; padding: 30px 25px; flex: 1; min-width: 220px; max-width: 300px; text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">💰</div>
+                    <p style="color: #fff; font-size: 15px; font-weight: 600; margin: 0; line-height: 1.4;">Booking
+                        fee<br>hanya <span style="color: #ffd700; font-size: 18px;">Rp5 juta</span></p>
+                    <p style="color: #ccc; font-size: 11px; margin-top: 10px;"></p>
+                </div>
+                <div
+                    style="background: rgba(255,255,255,0.1); border: 2px solid #ffd700; border-radius: 20px; padding: 30px 25px; flex: 1; min-width: 220px; max-width: 300px; text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">🚑</div>
+                    <p style="color: #fff; font-size: 15px; font-weight: 600; margin: 0; line-height: 1.4;">
+                        Ambulance<br><span style="color: #ffd700; font-size: 18px;">80 km included</span></p>
+                </div>
+                <div
+                    style="background: rgba(255,255,255,0.1); border: 2px solid #ffd700; border-radius: 20px; padding: 30px 25px; flex: 1; min-width: 220px; max-width: 300px; text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 15px;">🕋</div>
+                    <p style="color: #fff; font-size: 15px; font-weight: 600; margin: 0; line-height: 1.4;">Layanan
+                        ziarah<br><span style="color: #ffd700; font-size: 18px;">lengkap</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE 2 -->
+    <section class="quote-section">
+        <div class="container">
+            <h2>"Kami memulai Alhambra Memorial Park bukan sekadar bisnis,
+                tetapi sebagai ikhtiar menghadirkan pemakaman Islami yang tertata, layak, dan menenangkan,<br><br>Karena
+                setiap keluarga berhak mendapatkan perpisahan yang bermartabat.”</h2>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <!-- <section class="cta-section">
+        <div class="container">
+            <h2>Kesempatan Tidak Datang Dua Kali.</h2>
+            <p class="intro">Masuda Rukost Premium telah membuktikan daya tariknya:</p>
+            <div class="cta-proof-grid">
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-building cta-proof-icon"></i>
+                    <span class="cta-proof-text">80+ Unit SOLD OUT</span>
+                </div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-helmet-safety cta-proof-icon"></i>
+                    <span class="cta-proof-text">3 Tahap Terbangun</span>
+                </div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-handshake cta-proof-icon"></i>
+                    <span class="cta-proof-text">80+ Investor</span>
+                </div>
+
+                <div class="cta-proof-item">
+                    <i class="fa-solid fa-chart-line cta-proof-icon"></i>
+                    <span class="cta-proof-text">Tahap 4 On Progress</span>
+                </div>
+
+            </div>
+            <div class="cta-box">
+                <p class="cta-alert">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Kini Tersedia 12 Unit Terakhir
+                </p>
+
+                <p class="harga">
+                    <i class="fa-solid fa-coins"></i>
+                    Mulai Dari <br> Rp. 1,53 Miliar
+                </p>
+            </div>
+            <div class="cta-requirements">
+                <p>Jika Anda Mencari Properti yang:</p>
+                <div class="cta-reqs">
+                    <span>✅ Legalitas aman</span>
+                    <span>✅ Market jelas</span>
+                    <span>✅ Cashflow stabil</span>
+                    <span>✅ Minim repot</span>
+                    <span>✅ Aset jangka panjang</span>
+                </div>
+            </div>
+            <p class="cta-conclusion">Masuda adalah jawabannya.</p>
+        </div>
+    </section> -->
+
+    <!-- URGENCY CTA -->
+    <section class="urgency-section" id="cta">
+        <div class="container">
+            <!--<h2>Jangan Tunggu Sampai:</h2>-->
+            <!--<div class="urgency-items">-->
+            <!--    <span>❌ Unit habis</span>-->
+            <!--    <span>❌ Harga naik</span>-->
+            <!--    <span>❌ Investor lain mengambil unit terbaik</span>-->
+            <!--</div>-->
+
+            <h1>
+                <p class="urgency-cta">Amankan Persiapan Keluarga Anda Sekarang.</p>
+            </h1>
+            <div class="gallery-2col-item" style="margin-bottom : 50px">
+                <img src="../../image/masuda.jpeg" alt="Momen Tanda Tangan"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 14px;">
+            </div>
+            <a href="https://wa.wizard.id/9e9005" class="urgency-btn"><i class="fa-brands fa-whatsapp"></i> "Amankan
+                Unit Anda!"</a>
+    </section>
+
+    <!--<section class="founder">-->
+    <!--    <div class="container">-->
+    <!--        <h2>Founder Notes</h2>-->
+    <!--        <div class="founder-content">-->
+    <!--            <div class="founder-image">-->
+    <!--                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600" alt="Pak Masudi"-->
+    <!--                    style="width: 100%; height: 100%; object-fit: cover;">-->
+    <!--            </div>-->
+    <!--            <div class="founder-info">-->
+    <!--                <h3>Masuda</h3>-->
+    <!--                <h4>Founder Masuda Rukost Premium</h4>-->
+    <!--                <p>Dengan pengalaman di berbagai proyek properti dan pemahaman mendalam tentang kebutuhan investor,-->
+    <!--                    Masuda hadir dengan solusi investasi properti yang berbeda — bukan sekadar membeli aset, tapi-->
+    <!--                    memiliki sistem yang bekerja menghasilkan.</p>-->
+    <!--                <p>Setiap keputusan dirancang untuk keamanan investor, produktivitas properti, dan pertumbuhan-->
+    <!--                    jangka panjang.</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!-- PROJECT PHOTO GALLERY -->
+    <!--        <div class="testimonial-gallery" style="margin-top: 64px;">-->
+    <!--            <h3>📸 Proyek Masuda Rukost Premium</h3>-->
+    <!--            <div class="gallery-2col">-->
+    <!--                <div class="gallery-2col-item">-->
+    <!--                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400"-->
+    <!--                        alt="Tampilan Bangunan"-->
+    <!--                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">-->
+    <!--                    <p>Tampilan Bangunan</p>-->
+    <!--                </div>-->
+    <!--                <div class="gallery-2col-item">-->
+    <!--                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400"-->
+    <!--                        alt="Interior Kamar"-->
+    <!--                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">-->
+    <!--                    <p>Interior Kamar</p>-->
+    <!--                </div>-->
+    <!--                <div class="gallery-2col-item">-->
+    <!--                    <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=400" alt="Area Komunal"-->
+    <!--                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">-->
+    <!--                    <p>Area Komunal</p>-->
+    <!--                </div>-->
+    <!--                <div class="gallery-2col-item">-->
+    <!--                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400"-->
+    <!--                        alt="Fasilitas Lengkap"-->
+    <!--                        style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px;">-->
+    <!--                    <p>Fasilitas Lengkap</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+    <hr>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>1️⃣ Apakah membeli kavling makam diperbolehkan dalam Islam?</h4>
+                    <p>Ya. Berdasarkan Fatwa MUI No. 9 Tahun 2014, jual beli lahan untuk pemakaman diperbolehkan dengan
+                        syarat tidak berlebihan, tidak tabdzir, tidak israf, dan tetap sesuai ketentuan syariat.</p>
+                    <p style="margin-top: 12px; font-weight: 600;">Alhambra Memorial Park dirancang sesuai ketentuan
+                        tersebut:</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Khusus Muslim</li>
+                        <li>Arah kiblat sesuai syariat</li>
+                        <li>Pengelolaan profesional dan tertib</li>
+                    </ul>
+                </div>
+                <div class="faq-item">
+                    <h4>2️⃣ Bukankah menyiapkan makam seperti ini terkesan mendahului takdir?</h4>
+                    <p>Menyiapkan bukan berarti mendahului. Ini sama seperti menyiapkan asuransi, wasiat, atau dana
+                        pendidikan anak.</p>
+                    <p style="margin-top: 8px;">Yang kita siapkan bukan kematiannya, tetapi ketenangan keluarga saat
+                        waktunya tiba.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>3️⃣ Kenapa harganya lebih tinggi dibanding TPU biasa?</h4>
+                    <p>Karena yang Anda dapatkan bukan hanya lahan.<br>Anda mendapatkan:</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Kawasan tertata & landscape hijau</li>
+                        <li>Lifetime maintenance</li>
+                        <li>One-stop service prosesi lengkap</li>
+                        <li>Ustadz pendamping</li>
+                        <li>Sertifikat & database ahli waris</li>
+                        <li>Program wakaf jariyah</li>
+                    </ul>
+                    <p style="margin-top: 12px;">Yang mahal bukan tanahnya, tapi sistem dan ketenangan yang
+                        menyertainya.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>4️⃣ Apakah makam akan tetap terawat dalam jangka panjang?</h4>
+                    <p>Ya. Kami menyediakan lifetime maintenance & estate management profesional.</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Rumput dipangkas rutin</li>
+                        <li>Area dibersihkan berkala</li>
+                        <li>Lingkungan tetap tertata</li>
+                    </ul>
+                    <p style="margin-top: 12px;">Keluarga tidak perlu khawatir makam terbengkalai.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>5️⃣ Bagaimana jika terjadi kedukaan mendadak?</h4>
+                    <p>Tim kami siap membantu. Proses dari pembayaran hingga persiapan pemakaman dapat dilakukan dalam
+                        waktu ±5 jam setelah konfirmasi.</p>
+                    <p style="margin-top: 8px; font-weight: 600;">Termasuk:</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Pemulasaran</li>
+                        <li>Ambulance</li>
+                        <li>Prosesi lengkap</li>
+                        <li>Ustadz pendamping</li>
+                    </ul>
+                    <p style="margin-top: 12px;">Keluarga tidak perlu panik mengurus semuanya sendiri.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>6️⃣ Bagaimana sistem ahli warisnya?</h4>
+                    <p>Setiap kavling memiliki:</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Sertifikat Pemanfaatan Lahan</li>
+                        <li>Database ahli waris tercatat resmi</li>
+                    </ul>
+                    <p style="margin-top: 12px;">Ini mencegah konflik dan kebingungan di kemudian hari.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>7️⃣ Apakah kavling bisa dibeli untuk persiapan (pre-need)?</h4>
+                    <p>Ya, sangat dianjurkan. Dengan pre-need:</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Lebih tenang</li>
+                        <li>Tidak terburu-buru</li>
+                        <li>Harga lebih terkendali</li>
+                        <li>Keputusan tidak diambil dalam kondisi emosional</li>
+                    </ul>
+                </div>
+                <div class="faq-item">
+                    <h4>8️⃣ Apakah lokasi mudah dijangkau?</h4>
+                    <p>Lokasi berada di Kayumanis, Tanah Sereal – Kota Bogor, dekat Exit Tol Yasmin & Kayumanis.</p>
+                    <p style="margin-top: 8px;">Akses mudah dari: Jakarta, Depok, Tangerang, Bekasi.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>9️⃣ Apakah hanya untuk satu orang?</h4>
+                    <p>Tersedia berbagai tipe:</p>
+                    <ul style="margin-top: 8px; margin-left: 20px; font-size: 14px;">
+                        <li>Single</li>
+                        <li>Couple</li>
+                        <li>Family</li>
+                        <li>Super Family</li>
+                    </ul>
+                    <p style="margin-top: 12px;">Bisa disesuaikan dengan kebutuhan keluarga.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>🔟 Apakah ada program amal atau wakaf?</h4>
+                    <p>Ya. Sebagian biaya dialokasikan untuk program wakaf jariyah atas nama pemilik kavling.</p>
+                    <p style="margin-top: 8px;">Bukan hanya persiapan dunia, tapi juga investasi akhirat.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>1️⃣Apakah bisa survey lokasi terlebih dahulu?</h4>
+                    <p>Sangat dianjurkan. Datang langsung, rasakan suasananya, lihat fasilitasnya, dan diskusikan
+                        kebutuhan keluarga Anda bersama tim kami.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>1️⃣Jika belum yakin, apakah bisa konsultasi dulu tanpa komitmen?</h4>
+                    <p>Tentu. Kami memahami ini adalah keputusan besar. Silakan hubungi tim kami untuk konsultasi dan
+                        penjelasan detail, tanpa tekanan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <h3>Alhambra Memorial Park</h3>
+            <p style="margin-top:14px;font-size:14px;">Copyright © 2026</p>
+        </div>
+    </footer>
+</body>
+
+</html>
